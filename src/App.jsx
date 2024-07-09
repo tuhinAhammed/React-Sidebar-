@@ -116,9 +116,9 @@ function App() {
       <div className="flex gap-x-10 pr-6 py-6">
         <div className={`${active ? "w-[25%]" : `w-[6%] justify-centers`} h-screen bg-primary  px-6 relative duration-500 shadow-2xl shadow-[#ccc]`} >
           <div className="flex gap-x-4 items-center">
-            <img src={logo} alt="" className="w-[60px] cursor-pointer items-center justify-center"  onMouseOver={() => setActive(true)}/>
+            <img src={logo} alt="" className={`${active ? "w-[60px]" : "w-[60px]"} cursor-pointer items-center justify-center`}  onMouseOver={() => setActive(true)}/>
             <h1 className={`text-3xl font-semibold ${!active && "hidden"}`}>Vuexy</h1>
-            <FaArrowRight className={`absolute right-[-5%] ${!active && "right-[-20%]"} top-[1%] bg-theme p-2 text-4xl rounded-full text-primary cursor-pointer z-[9999] ${active ? "rotate-180" : "rotate-0"} duration-300`} onClick={() => setActive(!active) } onMouseOver={() => setActive(true)} />
+            <FaArrowRight className={`absolute right-[-5%] ${!active && "right-[-20%]"} top-[1%] bg-theme p-2 text-2xl rounded-full text-primary cursor-pointer z-[9999] ${active ? "rotate-180" : "rotate-0"} duration-300`} onClick={() => setActive(!active) } onMouseOver={() => setActive(true)} />
           </div>
           <div className="menuItem">
             <ul>
@@ -128,7 +128,7 @@ function App() {
                     <div>
                       <li className={`text-secondary cursor-pointer text-base p-3 rounded-md flex gap-x-4 items-center mt-2 relative ${!active && "items-center justify-center duration-500 shadow-md shadow-[#ccc]"} ${activeMenu === index ? ` bg-[#7367F0] !text-[#fff]` : "hover:bg-tertiary"}
                       ${item.space === false && "mt-6"}`} key={index}  onClick={() => handleMenuActive(index)} onMouseOver={() => setActive(true)}>
-                        <span className="flex items-center justify-center">
+                        <span className="flex items-center justify-center px-4">
                           {item.icons}
                         </span>
                         <div className={`text-xl text-lg duration-500  ${!active && "hidden "}`} >{item.name}</div>
